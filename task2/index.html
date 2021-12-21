@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Task Assets</title>
+  </head>
+  <body>
+    <h1 class='text-center text-info'>Task Board</h1>
+<!-- Button trigger modal -->
+<div class='text-center'>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newtaskModal">
+    New Task
+  </button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="newtaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div style="padding: 10px;" class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Task</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+              <div class="form-group">
+                <label for="inputname">Name</label>
+                <input type="text" class="form-control" id="inputname">
+              </div>
+              <div class="form-group">
+                <label for="inputdescription">Description</label>
+                <textarea name="inputdescription" id="inputdescription" class="form-control" rows="2">
+                </textarea>
+              </div>
+            <div class="form-group">
+              <label for="inputassignedto">Assigned To:</label>
+              <input type="text" class="form-control" id="inputassignedto">
+            </div>
+            <div class="form-group">
+              <label for="inputduedate">Due Date</label>
+              <input type="date" class="form-control" id="inputduedate" placeholder="DD/MM/YYYY">
+            </div>
+              <div class="form-group">
+                <label for="inputStatus">Status</label>
+                <select id="inputStatus" class="form-control">
+                <option value="todo">To Do</option>
+                <option value="inprogress">In Progress</option>
+                <option value="review">Review</option>
+                <option value="completed">Completed</option>
+                </select>
+              </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Reset</button>
+        <button type="button" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- cardlayout -->
+<div>
+    <ul>
+        <li class="list-unstyled">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title text-dark">Task 1</h5>
+                  <div class="d-flex w-100 mb-3 justify-content-between">
+                    <h6 class=" mb-2 text-muted">Assign To: Tymon</h6>
+                    <span class="badge badge-danger">TODO</span>
+                  </div>
+                  <p class="card-text">Tymon is still working on this project and changes will be made afterwards in the todo list </p>
+                  <div>
+                    <h6 class=" mb-2 text-danger">Due Date: 09/06/2022</h6>
+                  </div>
+                  <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#editTaskModal">Edit</button>
+                  <button class="delete btn btn-info btn-sm" name="delete">Save</button>
+                </div>
+              </div>
+        </li>
+        <li class="list-unstyled">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Task 2</h5>
+                  <div class="d-flex w-100 mb-3 justify-content-between">
+                    <h6 class=" mb-2 text-muted">Assign To: Wajhiha</h6>
+                    <span class="badge badge-success">In Progress</span>
+                  </div>
+                  <p class="card-text">Wajhiha has stated this project is still a work in progress</p>
+                  <div>
+                    <h6 class=" mb-2 text-danger">Due Date: 09/06/2022</h6>
+                  </div>
+                  <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#editTaskModal">Edit</button>
+                  <button class="delete btn btn-info btn-sm" name="delete">Save</button>
+                </div>
+              </div>
+        </li >
+        <li class="list-unstyled">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title text-dark">Task 3</h5>
+                  <div class="d-flex w-100 mb-3 justify-content-between">
+                    <h6 class=" mb-2 text-muted">Assign To: Tymon</h6>
+                    <span class="badge badge-warning">Review</span>
+                  </div>
+                  <p class="card-text">This task is completed and under review</p>
+                  <div>
+                    <h6 class=" mb-2 text-danger">Due Date: 09/06/2022</h6>
+                  </div>
+                  <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#editTaskModal">Edit</button>
+                  <button class="delete btn btn-info btn-sm" name="delete">Save</button>
+                </div>
+              </div>
+        </li>
+    </ul>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="editTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Task</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+                <div class="form-group">
+                  <label for="inputname">Name</label>
+                  <input type="text" class="form-control" id="inputname">
+                </div>
+                <div class="form-group">
+                  <label for="inputdescription">Description</label>
+                  <textarea name="inputdescription" id="inputdescription" class="form-control" rows="2">
+                  </textarea>
+                </div>
+              <div class="form-group">
+                <label for="inputassignedto">Assigned To:</label>
+                <input type="text" class="form-control" id="inputassignedto">
+              </div>
+              <div class="form-group">
+                <label for="inputduedate">Due Date</label>
+                <input type="date" class="form-control" id="inputduedate" placeholder="DD/MM/YYYY">
+              </div>
+                <div class="form-group">
+                  <label for="inputStatus">Status</label>
+                  <select id="inputStatus" class="form-control">
+                  <option value="todo">To Do</option>
+                  <option value="inprogress">In Progress</option>
+                  <option value="review">Review</option>
+                  <option value="completed">Completed</option>
+                  </select>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Reset</button>
+          <button type="button" class="btn btn-success">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
